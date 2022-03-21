@@ -1,26 +1,12 @@
-import { useState } from "react"
+import Counter from "./components/Counter"
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  const handleIncrease = () => {
-    setCount(count + 1)
-  }
-
-  const handleDecrease = () => {
-    setCount(count - 1)
-  }
-
   return (
-    <div className="counter-wrapper">
-      <h2 className="indicator">Count: {count}</h2>
-      <button className="button decrease" onClick={handleDecrease}>
-        Decrease
-      </button>
-      <button className="button increase" onClick={handleIncrease}>
-        Increase
-      </button>
-    </div>
+    <>
+      <Counter initialValue={5} step={3} />
+      <Counter initialValue={10} step={10} />
+      <Counter initialValue={15} />
+    </>
   )
 }
 
