@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --primary: #FF9F45;
+  --white: #ffffff;
+  --divider: #d8d8d8;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Poppins', Arial;
+}
+
+/* NAV */
+.nav {
+  margin-bottom: 1.5rem;
+  display: flex;
+  padding: 0 5rem;
+  align-items: center;
+  background-color: var(--primary);
+}
+
+.nav h1{
+  flex: 1 1 0;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  gap: 3rem;
+}
+.nav ul li {
+  padding: 1.2em 0.9em;
+  font-size: 1.2rem;
+}
+.nav ul li:hover {
+  border-bottom: "1px solid black";
+  cursor: pointer;
+  color: white;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: auto auto;
+}
+
+/* Button */
+button {
+  padding: 0.7em 0.8em;
+  background-color: var(--primary); 
+  border: none;
+  border-radius: 7px;
+  font-size: 1rem;
+}
+button:hover {
+  filter: brightness(90%);
+  cursor: pointer;
+}
+
+/* Input */
+input {
+  padding: 0.5em;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+}
+label {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+/* Counter */
+.counter-wrapper {
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-template-areas: 
+    "indicator indicator"
+    "decrease increase"
+  ;
+  gap: 1rem;
+  place-content: center;
+  margin: 4rem 0;
+}
+.counter-wrapper .indicator {
+  grid-area: indicator;
+  text-align: center;
+}
+.counter-wrapper .decrease {
+  grid-area: decrease;
+}
+.counter-wrapper .increase {
+  grid-area: increase;
+}
+
+/* Books */
+.books-wrapper {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3rem;
+}
+
+.book {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--divider);
+}
