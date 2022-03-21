@@ -1,27 +1,17 @@
-const books = [
-  {
-    id: 1,
-    name: "Don Quixote",
-    author: "Miguel de Cervantes",
-    sold: 500,
-  },
-  {
-    id: 2,
-    name: "A Tale of Two Cities",
-    author: "Charles Dickens",
-    sold: 200,
-  },
-  {
-    id: 3,
-    name: "The Lord of the Rings",
-    author: "J.R.R. Tolkien",
-    sold: 150,
-  },
-]
+import { useEffect, useState } from "react"
 
 const BooksPage = () => {
+  const [books, setBooks] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:3001/books")
+      .then((res) => res.json())
+      .then((data) => setBooks(data))
+  }, [])
+
   return (
     <>
+      {books.length === 0 && <div>Loading...</div>}
       {books.map((book) => (
         <div className="book" key={book.id}>
           <h2>{book.name}</h2>
