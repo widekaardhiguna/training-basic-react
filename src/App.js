@@ -1,11 +1,22 @@
+import { useState } from "react"
 import Counter from "./components/Counter"
+import AboutPage from "./pages/AboutPage"
+import CounterPage from "./pages/CounterPage"
 
 function App() {
+  const [currentPage, setCurrentPage] = useState("about")
+
   return (
     <>
-      <Counter initialValue={5} step={3} />
-      <Counter initialValue={10} step={10} />
-      <Counter initialValue={15} />
+      <nav className="nav">
+        <h1>React Training</h1>
+        <ul>
+          <li onClick={() => setCurrentPage("about")}>About</li>
+          <li onClick={() => setCurrentPage("counter")}>Counter</li>
+        </ul>
+      </nav>
+      {currentPage === "about" && <AboutPage />}
+      {currentPage === "counter" && <CounterPage />}
     </>
   )
 }
